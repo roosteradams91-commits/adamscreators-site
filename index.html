@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams Builders and Creators — Tools That Solve Real Problems</title>
+    <meta name="description" content="Adams Builders and Creators builds practical tools for digital safety, compliance, and business growth. From Sherlock cyberstalking detection to AI Act compliance checklists, we solve real problems.">
+    <meta name="keywords" content="cyberstalking detection, AI compliance, business tools, background check, review collection, digital safety, Sherlock, Adams Creators">
+    <meta name="author" content="Adams Builders and Creators">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://adamscreators.com">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Adams Builders and Creators — Tools That Solve Real Problems">
+    <meta property="og:description" content="Practical tools for digital safety, compliance, and business growth. From cyberstalking detection to AI compliance checklists.">
+    <meta property="og:url" content="https://adamscreators.com">
+    <meta property="og:site_name" content="Adams Builders and Creators">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Adams Builders and Creators — Tools That Solve Real Problems">
+    <meta name="twitter:description" content="Practical tools for digital safety, compliance, and business growth.">
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 90,28 90,72 50,95 10,72 10,28' fill='none' stroke='%232563eb' stroke-width='4'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-size='28' font-weight='bold' fill='%231e293b'%3EABC%3C/text%3E%3C/svg%3E">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Adams Builders and Creators",
+        "url": "https://adamscreators.com",
+        "description": "Tools that solve real problems. Digital safety, compliance, and business growth products.",
+        "email": "alex@adamscreators.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "253 Meeks Rd",
+            "addressLocality": "Colt",
+            "addressRegion": "AR",
+            "postalCode": "72326",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --abc-blue: #2563eb;
+            --abc-blue-dark: #1d4ed8;
+            --deep-slate: #1e293b;
+            --light-slate: #64748b;
+            --canvas: #f0f4f8;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --muted: #f1f5f9;
+            --cyan: #06b6d4;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-card: 0 4px 24px rgba(100,116,139,0.08);
+            --shadow-elevated: 0 8px 36px rgba(37,99,235,0.12);
+            --shadow-focus: 0 0 0 4px rgba(37,99,235,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: var(--canvas);
+            color: var(--deep-slate);
+            line-height: 1.6;
+            padding-top: 52px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%; left: -10%;
+            width: 60%; height: 60%;
+            background: radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%; right: -10%;
+            width: 50%; height: 50%;
+            background: radial-gradient(circle, rgba(6,182,212,0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 52px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+        }
+        .logo-mark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-mark svg { width: 28px; height: 28px; }
+        .logo-mark span { font-size: 14px; font-weight: 700; color: var(--deep-slate); letter-spacing: -0.3px; }
+        .header-links { display: flex; gap: 24px; align-items: center; }
+        .header-links a { font-size: 14px; font-weight: 600; color: var(--light-slate); text-decoration: none; transition: color 0.2s; }
+        .header-links a:hover { color: var(--abc-blue); }
+        .header-cta { background: var(--abc-blue) !important; color: #fff !important; padding: 8px 16px; border-radius: var(--radius-md); transition: background 0.2s; }
+        .header-cta:hover { background: var(--abc-blue-dark) !important; }
+
+        .hero {
+            position: relative; z-index: 1; text-align: center;
+            padding: 100px 24px 64px; max-width: 900px; margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 16px; background: var(--card);
+            border: 1px solid var(--border); border-radius: 9999px;
+            font-size: 13px; font-weight: 600; color: var(--light-slate);
+            margin-bottom: 24px; box-shadow: var(--shadow-card);
+        }
+        .hero-badge::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--success); }
+        .hero h1 { font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--abc-blue), var(--deep-slate));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero p { font-size: 18px; color: var(--light-slate); max-width: 600px; margin: 0 auto 32px; }
+        .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--abc-blue); color: #fff;
+            padding: 16px 28px; border-radius: var(--radius-md);
+            font-size: 16px; font-weight: 600; text-decoration: none;
+            transition: all 0.2s; box-shadow: var(--shadow-elevated);
+        }
+        .btn-primary:hover { background: var(--abc-blue-dark); transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--card); color: var(--abc-blue);
+            padding: 16px 28px; border-radius: var(--radius-md);
+            font-size: 16px; font-weight: 600; text-decoration: none;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--abc-blue); box-shadow: var(--shadow-focus); }
+
+        .stats-bar {
+            position: relative; z-index: 1; display: flex; justify-content: center;
+            gap: 48px; padding: 32px 24px; max-width: 800px; margin: 0 auto; flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 32px; font-weight: 700; color: var(--abc-blue); line-height: 1; }
+        .stat-label { font-size: 13px; font-weight: 600; color: var(--light-slate); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+        .products-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 48px 24px 64px; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-header h2 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { font-size: 16px; color: var(--light-slate); }
+
+        .category-tabs { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+        .tab {
+            padding: 10px 20px; border-radius: 9999px; font-size: 14px; font-weight: 600;
+            cursor: pointer; border: 1px solid var(--border); background: var(--card);
+            color: var(--light-slate); transition: all 0.2s;
+        }
+        .tab.active, .tab:hover { background: var(--abc-blue); color: #fff; border-color: var(--abc-blue); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+        .product-card {
+            background: var(--card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); overflow: hidden;
+            transition: all 0.3s; position: relative;
+        }
+        .product-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--abc-blue), transparent);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .product-card:hover { box-shadow: var(--shadow-elevated); transform: translateY(-2px); }
+        .product-card:hover::before { opacity: 1; }
+        .product-card-body { padding: 28px; }
+        .product-tag {
+            display: inline-block; font-size: 11px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 4px 10px; border-radius: var(--radius-sm); margin-bottom: 12px;
+        }
+        .tag-sherlock { background: rgba(37,99,235,0.1); color: var(--abc-blue); }
+        .tag-compliance { background: rgba(6,182,212,0.1); color: var(--cyan); }
+        .tag-business { background: rgba(34,197,94,0.1); color: var(--success); }
+        .tag-digital { background: rgba(245,158,11,0.1); color: var(--warning); }
+        .product-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .product-card p { font-size: 14px; color: var(--light-slate); margin-bottom: 20px; line-height: 1.5; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; }
+        .product-price { font-size: 22px; font-weight: 700; color: var(--deep-slate); }
+        .product-price .period { font-size: 14px; font-weight: 400; color: var(--light-slate); }
+        .product-link { font-size: 14px; font-weight: 600; color: var(--abc-blue); text-decoration: none; transition: gap 0.2s; display: inline-flex; align-items: center; gap: 4px; }
+        .product-link:hover { gap: 8px; }
+
+        .featured-banner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto 48px; padding: 0 24px; }
+        .featured-card {
+            background: linear-gradient(135deg, var(--abc-blue), var(--deep-slate));
+            border-radius: var(--radius-lg); padding: 48px; color: #fff;
+            display: flex; align-items: center; justify-content: space-between; gap: 32px;
+            position: relative; overflow: hidden;
+        }
+        .featured-card::before {
+            content: ''; position: absolute; top: -50%; right: -10%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(6,182,212,0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .featured-content { flex: 1; position: relative; z-index: 1; }
+        .featured-content .label { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.7; margin-bottom: 12px; }
+        .featured-content h3 { font-size: 28px; font-weight: 700; margin-bottom: 12px; line-height: 1.2; }
+        .featured-content p { font-size: 16px; opacity: 0.85; margin-bottom: 24px; max-width: 500px; }
+        .featured-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn-light { background: #fff; color: var(--abc-blue); padding: 14px 24px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; transition: transform 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-light:hover { transform: translateY(-1px); }
+        .btn-ghost-light { background: rgba(255,255,255,0.15); color: #fff; padding: 14px 24px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: background 0.2s; }
+        .btn-ghost-light:hover { background: rgba(255,255,255,0.25); }
+
+        .email-signup { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 64px 24px; text-align: center; }
+        .email-signup h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .email-signup p { font-size: 16px; color: var(--light-slate); margin-bottom: 32px; }
+        .signup-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+        .signup-form input { flex: 1; padding: 16px 20px; border: 2px solid var(--border); border-radius: var(--radius-md); font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+        .signup-form input:focus { border-color: var(--abc-blue); box-shadow: var(--shadow-focus); }
+        .signup-form button { background: var(--abc-blue); color: #fff; padding: 16px 28px; border: none; border-radius: var(--radius-md); font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-family: inherit; }
+        .signup-form button:hover { background: var(--abc-blue-dark); }
+        .signup-note { font-size: 12px; color: var(--light-slate); margin-top: 16px; }
+
+        footer { position: relative; z-index: 1; background: var(--deep-slate); color: #e2e8f0; padding: 48px 24px 32px; margin-top: 32px; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+        .footer-brand { display: flex; align-items: center; gap: 12px; }
+        .footer-brand svg { width: 36px; height: 36px; }
+        .footer-brand .name { font-size: 16px; font-weight: 700; color: #f1f5f9; }
+        .footer-brand .tag { font-size: 13px; color: var(--light-slate); }
+        .footer-links { display: flex; gap: 32px; flex-wrap: wrap; }
+        .footer-col h4 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--light-slate); margin-bottom: 12px; }
+        .footer-col a { display: block; font-size: 14px; color: #e2e8f0; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--abc-blue); }
+        .footer-bottom { max-width: 1200px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--light-slate); flex-wrap: wrap; gap: 16px; }
+        .footer-bottom a { color: var(--light-slate); text-decoration: none; }
+        .footer-bottom a:hover { color: #e2e8f0; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero { padding: 60px 16px 40px; }
+            .featured-card { flex-direction: column; padding: 32px; }
+            .signup-form { flex-direction: column; }
+            .header-links { display: none; }
+            .stats-bar { gap: 24px; }
+            .stat-number { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="/" class="logo-mark">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#2563eb" stroke-width="4"/>
+            <text x="50" y="62" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">ABC</text>
+        </svg>
+        <span>Adams Creators</span>
+    </a>
+    <div class="header-links">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="https://roosteradams.gumroad.com" target="_blank" rel="noopener">Store</a>
+        <a href="#contact" class="header-cta">Get in Touch</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-badge">26 products live · Building since 2026</div>
+    <h1>Tools that solve <span class="gradient-text">real problems</span>.</h1>
+    <p>We build practical software for digital safety, regulatory compliance, and business growth. No fluff — just tools that work.</p>
+    <div class="hero-actions">
+        <a href="#products" class="btn-primary">Browse Products →</a>
+        <a href="https://roosteradams.gumroad.com" target="_blank" rel="noopener" class="btn-secondary">Visit Store</a>
+    </div>
+</section>
+
+<div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">21</div><div class="stat-label">Products Live</div></div>
+    <div class="stat-item"><div class="stat-number">6</div><div class="stat-label">Product Lines</div></div>
+    <div class="stat-item"><div class="stat-number">$1+</div><div class="stat-label">Starting Price</div></div>
+    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Self-Built</div></div>
+</div>
+
+<div class="featured-banner" id="products">
+    <div class="featured-card">
+        <div class="featured-content">
+            <div class="label">⭐ Flagship Product</div>
+            <h3>Sherlock — Cyberstalking Detection & Digital Safety</h3>
+            <p>Multi-signal correlation engine that detects cyberstalking patterns by cross-referencing search history, device logs, and account activity. Patent-pending technology.</p>
+            <div class="featured-actions">
+                <a href="https://roosteradams.gumroad.com/l/sherlock-full-investigation" target="_blank" rel="noopener" class="btn-light">Get Sherlock →</a>
+                <a href="mailto:alex@adamscreators.com" class="btn-ghost-light">Request Demo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products-section">
+    <div class="section-header">
+        <h2>All Products</h2>
+        <p>Browse our full catalog across digital safety, compliance, and business tools.</p>
+    </div>
+    <div class="category-tabs">
+        <div class="tab active" onclick="filterProducts('all')">All</div>
+        <div class="tab" onclick="filterProducts('sherlock')">Sherlock</div>
+        <div class="tab" onclick="filterProducts('compliance')">Compliance</div>
+        <div class="tab" onclick="filterProducts('business')">Business</div>
+        <div class="tab" onclick="filterProducts('digital')">Digital</div>
+    </div>
+    <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Full Investigation</h3><p>Complete cyberstalking detection with multi-signal correlation, documentation report, and evidence package.</p><div class="product-footer"><div class="product-price">$99</div><a href="https://roosteradams.gumroad.com/l/sherlock-full-investigation" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Documentation Report</h3><p>Professional-grade documentation of cyberstalking activity for legal proceedings or law enforcement.</p><div class="product-footer"><div class="product-price">$39</div><a href="https://roosteradams.gumroad.com/l/sherlock-documentation" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Active Warrant Search</h3><p>Search active warrants by name and jurisdiction. Real-time CourtListener API integration.</p><div class="product-footer"><div class="product-price">$49</div><a href="https://roosteradams.gumroad.com/l/sherlock-warrant-search" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Active Warrant Monitoring</h3><p>Continuous monitoring with instant alerts when new warrants appear in your jurisdiction.</p><div class="product-footer"><div class="product-price">$29<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-warrant-monitoring" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Influencer Vetting Report</h3><p>Background check on social media influencers before partnerships or sponsorships.</p><div class="product-footer"><div class="product-price">$29</div><a href="https://roosteradams.gumroad.com/l/sherlock-influencer-vetting" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Decoy Link Generator</h3><p>Create tracked decoy links to identify who's monitoring your online activity.</p><div class="product-footer"><div class="product-price">$14</div><a href="https://roosteradams.gumroad.com/l/sherlock-decoy-link" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>DateSafe Background Check</h3><p>Quick background check for online dating safety. Verify before you meet.</p><div class="product-footer"><div class="product-price">$9</div><a href="https://roosteradams.gumroad.com/l/sherlock-datesafe" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Email Trace</h3><p>Trace email origins, verify sender identity, and detect spoofed messages.</p><div class="product-footer"><div class="product-price">$19</div><a href="https://roosteradams.gumroad.com/l/sherlock-email-trace" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Phone Trace</h3><p>Identify unknown callers, trace phone number origins, and flag potential threats.</p><div class="product-footer"><div class="product-price">$19</div><a href="https://roosteradams.gumroad.com/l/sherlock-phone-trace" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Stalker Monitor</h3><p>Continuous monitoring of your digital footprint for stalking indicators.</p><div class="product-footer"><div class="product-price">$29<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-stalker-monitor" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Stalker Pro</h3><p>Advanced stalker detection with AI pattern analysis and priority alerts.</p><div class="product-footer"><div class="product-price">$49<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-stalker-pro" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Brand Watch</h3><p>Monitor your brand's online presence for impersonation, counterfeiting, and reputation threats.</p><div class="product-footer"><div class="product-price">$79<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-brand-watch" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Brand Pro</h3><p>Enterprise brand protection with multi-channel monitoring and automated takedown requests.</p><div class="product-footer"><div class="product-price">$149<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-brand-pro" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>PI Toolkit</h3><p>Professional investigator toolkit with full access to all Sherlock tools and APIs.</p><div class="product-footer"><div class="product-price">$199<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-pi-toolkit" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Brand Agency</h3><p>White-label brand protection for agencies managing multiple client brands.</p><div class="product-footer"><div class="product-price">$299<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/sherlock-brand-agency" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="compliance"><div class="product-card-body"><span class="product-tag tag-compliance">Compliance</span><h3>EU AI Act Compliance Checklist</h3><p>Step-by-step checklist to ensure your AI products comply with the EU AI Act requirements.</p><div class="product-footer"><div class="product-price">$2.99</div><a href="https://roosteradams.gumroad.com/l/eu-ai-act-checklist" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="compliance"><div class="product-card-body"><span class="product-tag tag-compliance">Compliance</span><h3>AI Act Comply: SaaS Checker</h3><p>Automated compliance checker for SaaS products under the EU AI Act. Scan, identify gaps, fix.</p><div class="product-footer"><div class="product-price">$49<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/ai-act-comply" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="business"><div class="product-card-body"><span class="product-tag tag-business">Business</span><h3>ReviewRocket: SMS Reviews</h3><p>Collect customer reviews via SMS. Automated review requests, smart routing, and reputation management.</p><div class="product-footer"><div class="product-price">$49<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/reviewrocket" target="_blank" rel="noopener" class="product-link">Subscribe →</a></div></div></div>
+        <div class="product-card" data-category="business"><div class="product-card-body"><span class="product-tag tag-business">Business</span><h3>Google Business Profile Optimization</h3><p>Full audit and optimization of your Google Business Profile for maximum local search visibility.</p><div class="product-footer"><div class="product-price">$149</div><a href="https://roosteradams.gumroad.com/l/gbp-optimization" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="digital"><div class="product-card-body"><span class="product-tag tag-digital">Digital</span><h3>Email Etiquette Pro</h3><p>Professional email etiquette guide and templates for workplace communication. 200+ templates included.</p><div class="product-footer"><div class="product-price">$1</div><a href="https://roosteradams.gumroad.com/l/email-etiquette-pro" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="digital"><div class="product-card-body"><span class="product-tag tag-digital">Digital</span><h3>Freelancer AI Toolkit</h3><p>Curated AI tools and prompts for freelancers. Boost productivity and land more clients.</p><div class="product-footer"><div class="product-price">$2.99</div><a href="https://roosteradams.gumroad.com/l/freelancer-ai-toolkit" target="_blank" rel="noopener" class="product-link">Get it →</a></div></div></div>
+        <div class="product-card" data-category="compliance"><div class="product-card-body"><span class="product-tag tag-compliance">Compliance</span><h3>VerifyHub: Verification Platform</h3><p>All-in-one content verification — AI vs human detection, deepfake checks, review authenticity, and child safety screening. API included.</p><div class="product-footer"><div class="product-price">$98<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/kbedl" target="_blank" rel="noopener" class="product-link">Subscribe &rarr;</a></div></div></div>
+        <div class="product-card" data-category="business"><div class="product-card-body"><span class="product-tag tag-business">Business</span><h3>GBP Monthly Management</h3><p>Ongoing Google Business Profile management — posts, reviews, Q&A, and performance reporting every month.</p><div class="product-footer"><div class="product-price">$79<span class="period">/mo</span></div><a href="https://roosteradams.gumroad.com/l/gbp-management" target="_blank" rel="noopener" class="product-link">Subscribe &rarr;</a></div></div></div>
+        <div class="product-card" data-category="business"><div class="product-card-body"><span class="product-tag tag-business">Business</span><h3>Secret Shopper Pro</h3><p>Professional mystery shopping evaluation of your customer experience. Detailed report with response time, communication quality, and competitive comparison.</p><div class="product-footer"><div class="product-price">$49</div><a href="https://roosteradams.gumroad.com/l/bhrccp" target="_blank" rel="noopener" class="product-link">Get it &rarr;</a></div></div></div>
+        <div class="product-card" data-category="sherlock"><div class="product-card-body"><span class="product-tag tag-sherlock">Sherlock</span><h3>Harassment Documentation Kit</h3><p>Document online harassment with court-ready evidence packages. Templates, logging tools, and legal guidance included.</p><div class="product-footer"><div class="product-price">$2.99</div><a href="https://roosteradams.gumroad.com/l/vnddw" target="_blank" rel="noopener" class="product-link">Get it &rarr;</a></div></div></div>
+        <div class="product-card" data-category="digital"><div class="product-card-body"><span class="product-tag tag-digital">Digital</span><h3>Social Media Safety Guide</h3><p>Comprehensive guide to protecting yourself on social media. Privacy settings, fake account detection, stalking response, and data removal.</p><div class="product-footer"><div class="product-price">$2.99</div><a href="https://roosteradams.gumroad.com/l/social-media-safety" target="_blank" rel="noopener" class="product-link">Get it &rarr;</a></div></div></div>
+    </div>
+</div>
+
+<section class="products-section" id="about">
+    <div class="section-header"><h2>Built by one person. No funding. No fluff.</h2></div>
+    <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 18px; color: var(--light-slate); line-height: 1.7;">
+            Adams Builders and Creators is a solo-built product studio operating out of Colt, Arkansas.
+            Every product started as a real problem that needed solving — not a market trend to chase.
+            We believe tools should be practical, affordable, and actually work.
+            No venture capital. No growth hacking. Just software that solves problems people have.
+        </p>
+        <p style="font-size: 14px; color: var(--light-slate); margin-top: 24px; font-style: italic;">
+            "Capital is a constraint, not a stop sign."
+        </p>
+    </div>
+</section>
+
+<section class="email-signup" id="contact">
+    <h2>Stay in the loop</h2>
+    <p>New products, updates, and the occasional honest take on digital safety. No spam — we hate it too.</p>
+    <form class="signup-form" onsubmit="return handleSignup(event)">
+        <input type="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+    </form>
+    <p class="signup-note">By subscribing you agree to our Privacy Policy. Unsubscribe anytime.</p>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <div class="footer-brand">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="none" stroke="#60a5fa" stroke-width="4"/>
+                    <text x="50" y="62" text-anchor="middle" font-size="28" font-weight="bold" fill="#f1f5f9">ABC</text>
+                </svg>
+                <div><div class="name">Adams Builders and Creators</div><div class="tag">Tools that solve real problems.</div></div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="https://roosteradams.gumroad.com/l/sherlock-full-investigation" target="_blank" rel="noopener">Sherlock</a>
+                <a href="https://roosteradams.gumroad.com/l/ai-act-comply" target="_blank" rel="noopener">AI Act Comply</a>
+                <a href="https://roosteradams.gumroad.com/l/reviewrocket" target="_blank" rel="noopener">ReviewRocket</a>
+                <a href="https://roosteradams.gumroad.com" target="_blank" rel="noopener">All Products</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="mailto:alex@adamscreators.com">Email Us</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Use</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div>© 2026 Adams Builders and Creators · 253 Meeks Rd, Colt, AR 72326</div>
+        <div>Patent Pending — Multi-Signal Correlation Method</div>
+    </div>
+</footer>
+
+<script src="https://base44.app/api/apps/6a739f9fb6289211e22db7e0/functions/support-widget-js"></script>
+<script>
+    function filterProducts(category) {
+        const cards = document.querySelectorAll('.product-card');
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(t => t.classList.remove('active'));
+        event.target.classList.add('active');
+        cards.forEach(card => {
+            card.style.display = (category === 'all' || card.dataset.category === category) ? '' : 'none';
+        });
+    }
+    function handleSignup(e) {
+        e.preventDefault();
+        const input = e.target.querySelector('input');
+        const btn = e.target.querySelector('button');
+        btn.textContent = '✓ Subscribed!';
+        btn.style.background = '#22c55e';
+        input.value = '';
+        setTimeout(() => { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+        return false;
+    }
+</script>
+</body>
+</html>
