@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://roosteradams91-commits.github.io/adamscreators-site/sitemap.xml
